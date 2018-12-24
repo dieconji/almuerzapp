@@ -1,0 +1,177 @@
+/* Adjust the width of the left reveal menu.
+Copy all CSS from jquery.mobile.panel.css and delete the properties other than width, left, right and transform.
+Then delete the selectors/rules for display modes (reveal/push/overlay) and the position (left/right) that you don't use.
+If you don't use fixed toolbars on your page you can delete those selectors as well.
+Narrow the scope of the selectors to prevent other panels being affected by the overrides. */
+#demo-page #left-panel.ui-panel {
+    width: 15em;
+}
+#demo-page #left-panel.ui-panel-closed {
+    width: 0;
+}
+#demo-page .ui-panel-position-left.ui-panel-display-reveal {
+    left: 0;
+}
+#demo-page .ui-panel-content-wrap-position-left.ui-panel-content-wrap-open,
+.ui-panel-dismiss-position-left.ui-panel-dismiss-open {
+    left: 15em;
+    right: -15em;
+}
+#demo-page .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal {
+    left: 0;
+    right: 0;
+    -webkit-transform: translate3d(15em,0,0);
+    -moz-transform: translate3d(15em,0,0);
+    transform: translate3d(15em,0,0);
+}
+/* Combined listview collapsible menu. */
+/* Unset negative margin bottom on the listviews. */
+#left-panel .ui-panel-inner > .ui-listview { margin-bottom: 0; }
+/* Unset top and bottom margin on collapsible set. */
+#left-panel .ui-collapsible-set { margin: 0; }
+/* The first collapsible contains the collapsible set. Make it fit exactly in the collapsible content. */
+#left-panel .ui-panel-inner > .ui-collapsible > .ui-collapsible-content { padding-top: 0; padding-bottom: 0;  border-bottom: none; }
+
+/* Combined listview collapsible menu. */
+/* Unset negative margin bottom on the listviews. */
+#left-panel .ui-panel-inner > .ui-listview { margin-bottom: 0; }
+/* Unset top and bottom margin on collapsible set. */
+#left-panel .ui-collapsible-set { margin: 0; }
+/* The first collapsible contains the collapsible set. Make it fit exactly in the collapsible content. */
+#left-panel .ui-panel-inner > .ui-collapsible > .ui-collapsible-content { padding-top: 0; padding-bottom: 0;  border-bottom: none; }
+
+
+/* imagen borde circular */
+.img-circle {
+    border-radius: 50%;
+}
+
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pnSearch {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
+#pnSearch:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+.profileImg {
+	margin-left:0%;
+	float:left; 
+	height:80px;
+	width:80px;	
+} 
+
+.containerProfile {
+	width:100%;
+	height:auto;
+	padding:2%;
+	background-color: #e9e9e9;
+}
+
+.profileName {
+	margin-left: 90px;
+	position: absolute;
+  	top: 50%;
+}
+
+#uploadedImage { 
+	max-width: 100%; 
+}
+/*
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating > input {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > input:hover,
+.rating > input:hover ~ span {
+  color: transparent;
+}
+.rating > input:hover:before,
+.rating > input:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0; 
+   color: gold;
+}
+*/
+
+.rating {
+    float:left;
+}
+
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
